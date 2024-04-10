@@ -1,0 +1,31 @@
+negative_sum = 0
+negative_count = 0
+non_negative_sum = 0
+non_negative_count = 0
+
+while True:
+    number = float(input("Введите число (для завершения введите -1000): "))
+    
+    if number == -1000:
+        break
+    
+    if number < 0:
+        negative_sum += number
+        negative_count += 1
+    else:
+        non_negative_sum += number
+        non_negative_count += 1
+
+if negative_count > 0:
+    negative_average = negative_sum / negative_count
+else:
+    negative_average = 0
+
+if non_negative_count > 0:
+    non_negative_average = non_negative_sum / non_negative_count
+else:
+    non_negative_average = 0
+
+print("Среднее арифметическое отрицательных чисел:", negative_average)
+print("Среднее арифметическое неотрицательных чисел:", non_negative_average)
+
