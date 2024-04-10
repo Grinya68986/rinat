@@ -1,0 +1,4 @@
+total_sum = 0number = float(input("Введите первое число: "))
+while number != -100:    if number <= 2:
+        total_sum += number**2    number = float(input("Введите следующее число: "))
+print("Сумма квадратов чисел, не превосходящих 2, равна:", total_sum)
