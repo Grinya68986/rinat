@@ -1,0 +1,43 @@
+even_count = 0
+odd_count = 0
+even_range = None
+odd_range = None
+numbers = []
+position = 1
+min_number = None
+min_number_position = None
+
+while True:
+    num = int(input("Введите натуральное число (для завершения введите 0): "))
+        
+    if num == 0:
+        break
+    
+    numbers.append(num)
+    
+    if num % 2 == 0:
+        even_count += 1
+        if even_range is None:
+            even_range = [num, num]
+        else:
+            even_range[0] = min(even_range[0], num)
+            even_range[1] = max(even_range[1], num)
+    else:
+        odd_count += 1
+        if odd_range is None:
+            odd_range = [num, num]
+        else:
+            odd_range[0] = min(odd_range[0], num)
+            odd_range[1] = max(odd_range[1], num)
+    
+    if min_number is None or num < min_number:
+        min_number = num
+        min_number_position = position
+        
+    position += 1
+
+print("Количество четных чисел:", even_count)
+print("Количество нечетных чисел:", odd_count)
+print("Диапазон изменения четных чисел:", even_range)
+print("Диапазон изменения нечетных чисел:", odd_range)
+print("Порядковый номер наименьшего числа:", min_number_position)
